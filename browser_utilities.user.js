@@ -1,9 +1,9 @@
 // ==UserScript==
 // @name         Browser Utilities
 // @namespace    shortcuts-dev
-// @version      7.2.0
+// @version      7.2.1
 // @author       Tojioo
-// @license      Attribution-NonCommercial-ShareAlike Source License v1.0 (ANC-SA-1.0) - SEE LICENSE
+// @license      LicenseRef-ANC-SA-1.0
 // @description  Hamburger menu with page tools: Copy HTML, lightweight web inspector with JSON export, image browser, cookie banner handling, and themes.
 // @match        *://*/*
 // @run-at       document-start
@@ -402,9 +402,9 @@ conditions.
         /* Full image preview */
         #su-preview { position: fixed; inset: 0; z-index: 2147483649; background: rgba(0,0,0,0.94); display: none; flex-direction: column; }
         #su-preview.open { display: flex; }
-        #su-preview-bar { flex: 0 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 12px 14px; background: rgba(20,20,20,0.6); }
-        #su-preview-size { font-size: 12px; color: #ccc; font-family: 'SF Mono','Menlo',monospace; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-        .su-prev-actions { display: flex; gap: 8px; flex-shrink: 0; }
+        #su-preview-bar { flex: 0 0 auto; display: flex; align-items: center; justify-content: flex-end; gap: 8px; padding: 12px 14px; background: rgba(20,20,20,0.6); }
+        #su-preview-meta { flex: 0 0 auto; text-align: center; padding: 12px 16px 2px; font-size: 14px; color: #9a9a9a; font-family: 'SF Mono','Menlo',monospace; }
+        #su-preview-meta b { color: #fff; font-weight: 700; }
         #su-preview-strip { flex: 0 0 auto; display: none; gap: 10px; overflow-x: auto; -webkit-overflow-scrolling: touch; overscroll-behavior: contain; padding: 10px 14px; background: rgba(20,20,20,0.4); }
         .su-prev-thumb { flex: 0 0 auto; display: flex; flex-direction: column; align-items: center; gap: 4px; background: none; border: none; cursor: pointer; padding: 0; -webkit-tap-highlight-color: transparent; }
         .su-prev-thumb img { width: 54px; height: 54px; object-fit: cover; border-radius: 8px; border: 2px solid transparent; background: #1a1a1a; }
@@ -491,13 +491,11 @@ conditions.
         preview.id = 'su-preview';
         preview.innerHTML = `
         <div id="su-preview-bar">
-            <span id="su-preview-size"></span>
-            <span class="su-prev-actions">
-                <button class="su-prev-btn" data-action="prev-origin">${iconExternal}<span>Open origin</span></button>
-                <button class="su-prev-btn" data-action="prev-download">${iconDownload}<span>Download</span></button>
-                <button class="su-prev-btn" data-action="prev-close">${iconClose}</button>
-            </span>
+            <button class="su-prev-btn" data-action="prev-origin">${iconExternal}<span>Open origin</span></button>
+            <button class="su-prev-btn" data-action="prev-download">${iconDownload}<span>Download</span></button>
+            <button class="su-prev-btn" data-action="prev-close">${iconClose}</button>
         </div>
+        <div id="su-preview-meta"></div>
         <div id="su-preview-strip"></div>
         <div id="su-preview-stage"><img id="su-preview-img" alt=""></div>`;
         document.body.appendChild(preview);
@@ -1208,7 +1206,7 @@ conditions.
             strip.style.display = g.variants.length > 1 ? 'flex' : 'none';
             strip.innerHTML = g.variants.map((vv, i) =>
                 `<button class="su-prev-thumb${i === previewVariant ? ' active' : ''}" data-action="prev-pick" data-i="${i}"><img src="${escapeHtml(g.src)}" referrerpolicy="no-referrer" alt=""><span>${vv.rw}×${vv.rh}</span></button>`).join('');
-            preview.querySelector('#su-preview-size').textContent = `${v.rw}×${v.rh} shown · source ${g.natural}`;
+            preview.querySelector('#su-preview-meta').innerHTML = `<b>${v.rw} × ${v.rh}</b> shown${g.nw ? ` · source ${g.nw} × ${g.nh}` : ''}`;
             preview.querySelector('#su-preview-stage').scrollTop = 0;
         }
         function setVariant(i) {

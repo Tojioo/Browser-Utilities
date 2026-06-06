@@ -3,7 +3,7 @@
 // @namespace    shortcuts-dev
 // @version      7.2.0
 // @author       Tojioo
-// @license      LGPL-3.0-or-later (TODO: turn into own license, since not yet published)
+// @license      Custom Non-Commercial Open Source License - SEE LICENSE
 // @description  Hamburger menu with page tools: Copy HTML, lightweight web inspector with JSON export, image browser, cookie banner handling, and themes.
 // @match        *://*/*
 // @run-at       document-start
@@ -13,8 +13,13 @@
 // ==/UserScript==
 
 /*
-Copyright (C) 2026 Tojioo.
-This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 3.
+Copyright (C) 2026 Tojioo. All rights reserved.
+
+This software is licensed under the Custom Non-Commercial Open Source License.
+You may use, distribute verbatim copies, and create modified versions for
+non-commercial purposes only, provided that attribution to the original author
+and a reference to the original repository are retained. Commercial use is
+prohibited. See the LICENSE.txt file for the full terms and conditions.
 */
 
 (function () {

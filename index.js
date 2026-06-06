@@ -3,7 +3,7 @@
 // @namespace    shortcuts-dev
 // @version      7.2.0
 // @author       Tojioo
-// @license      Attribution-NonCommercial-ShareAlike Source License v1.0 (ANC-SA-1.0)
+// @license      Attribution-NonCommercial-ShareAlike Source License v1.0 (ANC-SA-1.0) - SEE LICENSE
 // @description  Hamburger menu with page tools: Copy HTML, lightweight web inspector with JSON export, image browser, cookie banner handling, and themes.
 // @match        *://*/*
 // @run-at       document-start

@@ -3,7 +3,7 @@
 // @namespace    shortcuts-dev
 // @version      7.2.0
 // @author       Tojioo
-// @license      Custom Non-Commercial Open Source License - SEE LICENSE
+// @license      Attribution-NonCommercial-ShareAlike Source License v1.0 (ANC-SA-1.0)
 // @description  Hamburger menu with page tools: Copy HTML, lightweight web inspector with JSON export, image browser, cookie banner handling, and themes.
 // @match        *://*/*
 // @run-at       document-start
@@ -15,11 +15,12 @@
 /*
 Copyright (C) 2026 Tojioo. All rights reserved.
 
-This software is licensed under the Custom Non-Commercial Open Source License.
-You may use, distribute verbatim copies, and create modified versions for
-non-commercial purposes only, provided that attribution to the original author
-and a reference to the original repository are retained. Commercial use is
-prohibited. See the LICENSE.txt file for the full terms and conditions.
+This software is licensed under the Attribution-NonCommercial-ShareAlike Source
+License v1.0 (ANC-SA-1.0). You may use, distribute verbatim copies, and create
+modified versions for non-commercial purposes only, provided that attribution to
+the original author and a reference to the original repository are retained.
+Commercial use is prohibited. See the LICENSE file for the full terms and
+conditions.
 */
 
 (function () {

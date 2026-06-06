@@ -3,7 +3,7 @@
   "version": "7.2.0",
   "description": "Hamburger menu with page tools: Copy HTML, lightweight web inspector with JSON export, image browser, cookie banner handling, and themes.",
   "author": "Tojioo",
-  "license": "SEE LICENSE IN LICENSE.txt",
+  "license": "LicenseRef-ANC-SA-1.0",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

@@ -10,6 +10,8 @@
 // @noframes
 // @grant        GM.getValue
 // @grant        GM.setValue
+// @updateURL    https://raw.githubusercontent.com/Tojioo/Browser-Utilities/main/browser_utilities.user.js
+// @downloadURL  https://raw.githubusercontent.com/Tojioo/Browser-Utilities/main/browser_utilities.user.js
 // ==/UserScript==
 
 /*
